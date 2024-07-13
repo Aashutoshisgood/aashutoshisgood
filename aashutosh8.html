@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aashutosh's Personal Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212; /* Dark background */
+            margin: 0;
+            padding: 0;
+            color: #e0e0e0; /* Light text color */
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #1f1f1f; /* Darker navbar */
+            overflow: auto;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar a {
+            float: left;
+            padding: 12px 16px;
+            color: #e0e0e0; /* Light text color */
+            text-align: center;
+            text-decoration: none;
+            font-size: 17px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #333; /* Darker on hover */
+        }
+
+        .container {
+            background: #2a2a2a; /* Darker content background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            width: 90%;
+            margin: 20px auto;
+            text-align: center;
+            opacity: 0; /* Start invisible */
+            animation: fadeIn 1s forwards; /* Fade in animation */
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px auto;
+        }
+
+        marquee {
+            color: #ff4500; /* Bright color for marquee */
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #ffcc00; /* Bright color for main heading */
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .profile-img {
+            border-radius: 50%;
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .hobbies {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            opacity: 0; /* Start invisible */
+            animation: slideIn 1s forwards; /* Slide in animation */
+        }
+
+        .hobby {
+            background: #2a2a2a; /* Darker hobby background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            margin: 10px;
+            padding: 20px;
+            width: 45%;
+            min-width: 200px;
+            transition: transform 0.3s ease;
+        }
+
+        .hobby:hover {
+            transform: scale(1.05);
+        }
+
+        .hobby img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+        }
+
+        .social-links img {
+            width: 40px;
+            height: 40px;
+            transition: filter 0.3s ease;
+        }
+
+        .social-links img:hover {
+            filter: brightness(1.2); /* Brighten on hover */
+        }
+
+        .section {
+            padding: 20px;
+            background-color: #2a2a2a; /* Darker section background */
+            margin: 20px 0;
+            border-radius: 10px;
+            max-width: 800px;
+            width: 90%;
+            text-align: left;
+            opacity: 0; /* Start invisible */
+            animation: fadeIn 1s forwards; /* Fade in animation */
+        }
+
+        .section h2 {
+            color: #ffcc00; /* Bright color for section headings */
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .section p {
+            color: #b0b0b0; /* Light gray for section text */
+            line-height: 1.6;
+        }
+
+        .subscribe-form input[type="email"] {
+            padding: 10px;
+            width: 70%;
+            margin-right: 10px;
+            border: 1px solid #444; /* Dark border */
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #333; /* Darker input background */
+            color: #e0e0e0; /* Light text color */
+        }
+
+        .subscribe-form input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            background-color: #ffcc00; /* Bright button color */
+            color: #121212; /* Dark text color */
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .subscribe-form input[type="submit"]:hover {
+            background-color: #ffb300; /* Darker on hover */
+        }
+
+        .footer {
+            background-color: #1f1f1f; /* Darker footer */
+            color: #e0e0e0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #ff4500; /* Bright color for footer links */
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+    <style>
+        /* (Existing styles) */
+
+        /* Rating styles */
+        .rating {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .star {
+            font-size: 30px;
+            cursor: pointer;
+            color: #ffcc00; /* Gold color for stars */
+            transition: transform 0.3s;
+        }
+        .star:hover {
+            transform: scale(1.2); /* Grow effect on hover */
+        }
+        .star.rated {
+            color: #ffb300; /* Darker gold for rated stars */
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#notice">Notice</a>
+        <a href="#subscribe">Subscribe Us</a>
+    </div>
+    
+    <h1>Welcome to Aashutosh's Page!</h1>
+    <div class="container">
+        <img src="C:\Users\user\Downloads\332028654_888452998935617_806848998768421350_n.jpg" alt="Aashutosh's Photo" class="profile-img">
+        <p>Hello, my name is Aashutosh, and I am a 16-year-old student at Budanilkantha School. I enjoy immersing myself in a variety of activities such as watching series and movies, listening to music, and swimming. These hobbies not only help me relax but also provide a wonderful balance to my academic pursuits. I'm excited to engage with new opportunities and challenges, always eager to learn and grow.HAHA PHOTO BY AI</p>
+    </div>
+    <marquee direction="left">Hello, my name is Aashutosh, and I am a 16-year-old student at Budanilkantha School. I enjoy immersing myself in a variety of activities such as watching series and movies, listening to music, and swimming. These hobbies not only help me relax but also provide a wonderful balance to my academic pursuits. I'm excited to engage with new opportunities and challenges, always eager to learn and grow.</marquee>
+    
+    <div class="hobbies">
+        <div class="hobby">
+            <h2>Watching Series and Movies</h2>
+            <img src="C:\Users\user\Downloads\download (2).jfif" alt="Watching Movies">
+            <p>I love to watch a variety of series and movies, enjoying different genres and storytelling styles.</p>
+        </div>
+        <div class="hobby">
+            <h2>Listening to Music</h2>
+            <img src="C:\Users\user\Downloads\download (1).jfif" alt="Listening to Music">
+            <p>Music is a big part of my life, helping me to relax, focus, and get inspired.</p>
+        </div>
+        <div class="hobby">
+            <h2>Swimming</h2>
+            <img src="C:\Users\user\Downloads\download.jfif" alt="Swimming">
+            <p>Swimming is a great way to stay fit and clear my mind, and I always look forward to my time in the water.</p>
+        </div>
+    </div>
+    
+    <div class="social-links">
+        <a href="https://www.instagram.com/aashutosh3408/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com/bhawani.rijal.904" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+        </a>
+    </div>
+    
+    <div id="home" class="section">
+        <h2>Home</h2>
+        <p>Welcome to my personal webpage! Here you'll find information about my hobbies, interests, and the latest updates in my life. Feel free to explore and learn more about me!</p>
+    </div>
+    
+    <div id="about" class="section">
+        <h2>About Us</h2>
+        <p>My name is Aashutosh, and I am a passionate student at Budanilkantha School. With a strong interest in various activities such as watching series, movies, listening to music, and swimming, I strive to balance my academic and personal life. I'm always open to new opportunities and challenges that help me grow and learn.</p>
+    </div>
+    
+    <div id="notice" class="section">
+        <h2>Notice</h2>
+        <p>Stay tuned for the latest announcements and updates. Whether it's related to school, hobbies, or personal achievements, this section will keep you informed about everything important happening in my life.</p>
+    </div>
+    
+    <div id="subscribe" class="section">
+        <h2>Subscribe Us</h2>
+        <p>If you'd like to stay updated with my latest activities and posts, please subscribe to my newsletter by entering your email below.</p>
+        <form class="subscribe-form">
+            <input type="email" placeholder="Enter your email" required>
+            <input type="submit" value="Subscribe">
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Aashutosh. All rights reserved.</p>
+        <p><a href="#home">Back to Top</a></p>
+    </div>
+    <div class="rating">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Aashutosh. All rights reserved.</p>
+        <p><a href="#home">Back to Top</a></p>
+    </div>
+
+    <script>
+        // JavaScript for rating functionality
+        const stars = document.querySelectorAll('.star');
+        let ratingValue = 0;
+
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                ratingValue = star.getAttribute('data-value');
+                updateStars(ratingValue);
+                alert(`Thank you for rating! You gave a rating of ${ratingValue} star(s).`);
+            });
+
+            star.addEventListener('mouseover', () => {
+                const currentValue = star.getAttribute('data-value');
+                updateStars(currentValue);
+            });
+
+            star.addEventListener('mouseout', () => {
+                updateStars(ratingValue);
+            });
+        });
+
+        function updateStars(rating) {
+            stars.forEach(star => {
+                if (star.getAttribute('data-value') <= rating) {
+                    star.classList.add('rated');
+                } else {
+                    star.classList.remove('rated');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
